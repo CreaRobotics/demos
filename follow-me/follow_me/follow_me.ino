@@ -15,8 +15,8 @@ int ECHO_PIN = 2;
 int TRIG_PIN = 3;
 
 // motor pins
-int L_MOTOR_PIN = 10;
-int R_MOTOR_PIN = 9;
+int L_MOTOR_PIN = 9;
+int R_MOTOR_PIN = 10;
 
 // globals
 
@@ -42,7 +42,7 @@ void go_back()
 
 void go_stop()
 {
-    l_servo.write(90);
+    l_servo.write(96);
     r_servo.write(90);
 }
 
@@ -75,7 +75,7 @@ void loop()
     // control logic
     
     // wait for a close person
-    if(dist < 30) {
+    if(dist < 100) {
         // if person is nearer than before
         if(dist < last_dist) {
             // go straight
@@ -88,6 +88,7 @@ void loop()
         }
     }
     else {
+        // stop
         go_stop();
     }
     
