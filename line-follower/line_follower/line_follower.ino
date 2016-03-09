@@ -1,7 +1,7 @@
 /**
  * @file line_follower.ino
  * @brief Example code for a line follower using the ProtoCREA robot.
- * @author Veronica Gonzalez (veronica.glezperez[at]gmail.com)
+ * @author Veronica Gonzalez
  * @copyright CREA Robotica Educativa
  */
 
