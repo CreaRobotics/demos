@@ -24,20 +24,20 @@ Ultrasonic us(TRIG_PIN, ECHO_PIN);
 
 Servo l_servo, r_servo;
 
-int dist, last_dist = 0;
+int dist = 0;
 
 // functions
 
 void go_straight()
 {
-    l_servo.write(0);
-    r_servo.write(180);
+    l_servo.write(180);
+    r_servo.write(0);
 }
 
 void go_back()
 {
-    l_servo.write(180);
-    r_servo.write(0);
+    l_servo.write(0);
+    r_servo.write(180);
 }
 
 void go_stop()
@@ -73,31 +73,22 @@ void loop()
     dist = us.CalcDistance(microsec, Ultrasonic::CM);
 
     // control logic
-    
-    // wait for a close person
-    if(dist < 100) {
-        // if person is nearer than before
-        if(dist < last_dist) {
-            // go straight
-            go_straight();
-        }
-        // if person is further than before
-        else {
-            // go back
-            go_back();
-        }
+    if(dist <= 50 && dist > 15) {
+        go_straight();
+    }
+    else if(dist <= 15) {
+        go_back();
     }
     else {
         // stop
         go_stop();
     }
-    
-    // save last distance
-    last_dist = dist;
 
     // wait for 1s
     delay(1000);
 }
+
+
 
 
 
