@@ -26,7 +26,10 @@ float KD = 0.1;
 int lastError = 0;
 
 // Object for the infrared sensor.
-// In this example we have three sensors on analog inputs 0 - 2.
+// In this example we have three sensors on analog inputs:
+//    0 - orange
+//    1 - yellow
+//    2 - green
 unsigned char inf_sensor[] = {
   0, 1, 2};
 QTRSensorsAnalog qtr(inf_sensor, 3);
