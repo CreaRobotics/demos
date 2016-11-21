@@ -1,7 +1,7 @@
 /**
  * @file follow_me.ino
  * @brief Example code for a follow me mono-sensor using the ProtoCREA robot.
- * @author Raul Perula-Martinez (raules[at]gmail.com)
+ * @author Raul Perula-Martinez (raul.perula[at]crea-robotica.com)
  * @copyright CREA Robotica Educativa
  */
 

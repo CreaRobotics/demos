@@ -1,7 +1,7 @@
 /**
  * @file follow_me.ino
  * @brief Example code for a follow me mono-sensor using the ProtoCREA robot.
- * @author Raul Perula-Martinez (raules[at]gmail.com)
+ * @author Raul Perula-Martinez (raul.perula[at]crea-robotica.com)
  * @copyright CREA Robotica Educativa
  */
 
@@ -11,8 +11,8 @@
 // constants
 
 // US sensor pins
-int ECHO_PIN = 2;
-int TRIG_PIN = 3;
+int ECHO_PIN = 3;
+int TRIG_PIN = 4;
 
 // motor pins
 int L_MOTOR_PIN = 9;
@@ -42,8 +42,8 @@ void go_back()
 
 void go_stop()
 {
-    l_servo.write(96);
-    r_servo.write(90);
+    l_servo.write(92);
+    r_servo.write(92);
 }
 
 /**
@@ -71,6 +71,8 @@ void loop()
 
     // get distances
     dist = us.CalcDistance(microsec, Ultrasonic::CM);
+    Serial.print("Distance: ");
+    Serial.println(dist);
 
     // control logic
     if(dist <= 50 && dist > 15) {
